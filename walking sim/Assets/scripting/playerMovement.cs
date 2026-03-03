@@ -27,9 +27,10 @@ public class playerMovement : MonoBehaviour
     private float pitch;
     private float yaw;
 
-    private GameObject currentTarget;
+
     public Image reticleImage;
     private bool pressButton;
+    private interActable currentInteractable;
     
 
     public static event Action<NPCData> OnDialogueReqested;
@@ -51,6 +52,8 @@ public class playerMovement : MonoBehaviour
     {
         handleMovement();
         handleLook();
+        CheckInteract();
+        HandleInteract();
     }
     private void handleLook()
     {
@@ -62,12 +65,15 @@ public class playerMovement : MonoBehaviour
         pitch -= pitchDelta;
         pitch = Mathf.Clamp(pitch, -90, 90);
         cameraTransform.localRotation = Quaternion.Euler(pitch, 0,0);
+
+        
+
     }
 
     private void handleMovement()
     {
         bool grounded = cC.isGrounded;
-        Debug.Log("is grounded" + grounded);
+        
 
         if(grounded && verticalVelocity <= 0f)
         {
@@ -121,10 +127,10 @@ public class playerMovement : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 3f))
         {
             //store the object so we can destroy or do whatever when the player clicks
-            currentTarget = hit.collider.gameObject;
-            if (reticleImage != null)
+            currentInteractable = hit.collider.GetComponentInParent<interActable>();
+            if (reticleImage != null && currentInteractable != null)
             {
-                reticleImage.color = Color.red;
+                reticleImage.color = Color.aliceBlue;
             }
         }
 
@@ -135,13 +141,12 @@ public class playerMovement : MonoBehaviour
     {
         //if the player did not press interact this frame do nothing
         if (!pressButton) return;
-        //consume the input so one click only triggers one interactions
-        //this changes next frame
+      
         pressButton = false;
-        if (currentTarget == null) return;
-        Destroy(currentTarget);
+        if (currentInteractable == null) return;
+        currentInteractable.Interact(this);
         //clear target reference after destroying
-        currentTarget = null;
+      
 
     }
 
@@ -170,13 +175,8 @@ public class playerMovement : MonoBehaviour
     public void onInteract(InputAction.CallbackContext context)
     {
         if (context.performed) pressButton = true;
+       
     }
-
-    public void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        Debug.Log("Character Collided with:" + hit.gameObject.name);
-    }
-
     public void RequestDialoge(NPCData nPCData)
     {
         OnDialogueReqested?.Invoke(nPCData);
