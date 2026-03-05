@@ -1,11 +1,18 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class dialogueManager : MonoBehaviour
 {
     public GameObject dialoguePanel;
     public TextMeshProUGUI displayName;
     public TextMeshProUGUI placeholderOpeningLine;
+
+    public Transform choicesContainer; // choice button spawn parent
+    public Button choiceButtonPrefab;//prefabs yayyyy
+
+    private NPCData currentNode;
+    private int lineIndex;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void OnEnable()
