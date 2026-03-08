@@ -23,6 +23,5 @@ public enum Type
 
     PuzzleItem,
     SpiritBox,
-  
     GeneralInteractable
 }

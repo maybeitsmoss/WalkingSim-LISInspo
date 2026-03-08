@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bookshelf
   m_EditorClassIdentifier: Assembly-CSharp::itemScript
   image: {fileID: 0}
-  range: {x: 5, y: 4}
-  type: 0
+  range: {x: 5, y: 3}
+  type: 3
