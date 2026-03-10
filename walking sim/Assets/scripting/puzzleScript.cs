@@ -14,5 +14,8 @@ public class puzzleScript : MonoBehaviour
 
     }
 
-    public PuzzleItem GetPuzzleItem () { return puzzleItem; }
+    public PuzzleItem GetPuzzleItem()
+    {
+        return puzzleItem;
+    }
 }

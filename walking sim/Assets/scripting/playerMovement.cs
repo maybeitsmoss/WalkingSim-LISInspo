@@ -9,10 +9,10 @@ public class playerMovement : MonoBehaviour
     [Header("Movement")]
     public float walkSpeed = 5f;
     public float runSpeed = 7f;
-    public float jumpHeight = 5f;
+  
 
     bool isRunning;
-    bool isJumping;
+
    
     public Transform cameraTransform;
     public float lookSensitivity = 1f;
@@ -97,17 +97,6 @@ public class playerMovement : MonoBehaviour
 
         Vector3 move = transform.right * moveInput.x * currentSpeed + transform.forward * moveInput.y * currentSpeed;
 
-        if(isJumping && grounded)
-        {
-
-            verticalVelocity = Mathf.Sqrt(f: jumpHeight * -2f * gravity);
-        }
-        else
-        {
-            isJumping = false;
-        }
-
-        verticalVelocity += gravity * Time.deltaTime;
 
         Vector3 velocity = Vector3.up *verticalVelocity;
 
@@ -166,10 +155,7 @@ public class playerMovement : MonoBehaviour
     
     }
 
-    public void onJump(InputAction.CallbackContext context)
-    {
-        if (context.performed) isJumping = true;
-    }
+   
     
     public void onSprint(InputAction.CallbackContext context)
     {

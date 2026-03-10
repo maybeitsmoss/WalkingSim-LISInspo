@@ -13,41 +13,60 @@ public class puzzleItems : MonoBehaviour
         clueList = new List<puzzleScript.PuzzleItem>();
     }
 
-    public void PickUpItem (puzzleScript.PuzzleItem item)
+    public void PickUpItem(puzzleScript.PuzzleItem item)
     {
 
         Debug.Log("Picked up:" + item);
         clueList.Add(item);
     }
 
-    public void UseItem(puzzleScript.PuzzleItem item) {
+    public void UseItem(puzzleScript.PuzzleItem item)
+    {
 
         clueList.Remove(item);
-    
+
     }
 
-    public bool HasPiece(puzzleScript.PuzzleItem piece) { 
+    public bool HasPiece(puzzleScript.PuzzleItem item)
+    {
 
-        return clueList.Contains(piece);
-   
+        return clueList.Contains(item);
+
     }
 
     private void OnTriggerEnter(Collider collider)
-    { if (Input.GetKeyDown(KeyCode.R)) {
-
-            puzzleScript piece = collider.GetComponent<puzzleScript>();
-            if (piece != null)
-            {
-
-                PickUpItem(piece.GetPuzzleItem());
-                Destroy(piece.gameObject);
-
-
-            }
+    {
+        Debug.Log("trigger is working");
+        //if(collider.)
+        puzzleScript item = collider.GetComponent<puzzleScript>();
+        Debug.Log("component got");
+        if (item != null)
+        {
+            Debug.Log("item acquitere");
+            PickUpItem(item.GetPuzzleItem());
+            Destroy(item.gameObject);
 
 
         }
-        
+
+        if (item == null)
+        {
+            Debug.Log("item is null");
+        }
+
+        puzzleSolver puzzlesolver = collider.GetComponent<puzzleSolver>();
+        if (puzzlesolver != null)
+        {
+
+            if (HasPiece(puzzlesolver.GetPuzzleItem()))
+            {
+                UseItem(puzzlesolver.GetPuzzleItem());
+                puzzlesolver.solvedIt();
+            }
+        }
+
+
+
     }
 
 }
