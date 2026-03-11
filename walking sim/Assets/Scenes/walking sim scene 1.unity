@@ -1628,6 +1628,7 @@ GameObject:
   - component: {fileID: 829136610}
   - component: {fileID: 829136612}
   - component: {fileID: 829136611}
+  - component: {fileID: 829136613}
   m_Layer: 5
   m_Name: menu
   m_TagString: Untagged
@@ -1694,6 +1695,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829136609}
   m_CullTransparentMesh: 1
+--- !u!114 &829136613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829136609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7c1cba743967e4fbb03b2df9105ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::menuController
+  menuCanvas: {fileID: 829136609}
 --- !u!224 &919089625 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3400868850833739739, guid: 9f3afc6928dab6c498d00cee96bf253a, type: 3}
@@ -2258,6 +2272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7c1cba743967e4fbb03b2df9105ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  menuCanvas: {fileID: 0}
 --- !u!1001 &1311618911
 PrefabInstance:
   m_ObjectHideFlags: 0
