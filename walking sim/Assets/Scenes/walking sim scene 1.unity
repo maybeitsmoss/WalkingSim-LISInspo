@@ -1399,6 +1399,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5119281868811212009, guid: 615d504087d45f54098f183bf78d1975, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1674815020}
+    - targetCorrespondingSourceObject: {fileID: 5119281868811212009, guid: 615d504087d45f54098f183bf78d1975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1674815021}
     - targetCorrespondingSourceObject: {fileID: -6471716869452815037, guid: 615d504087d45f54098f183bf78d1975, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1347368255}
@@ -3086,6 +3089,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7059488439374195479, guid: 615d504087d45f54098f183bf78d1975, type: 3}
+--- !u!114 &1674815021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674815011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d0983986f8f6044985b7e5f5b40b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::puzzleScript
+  puzzleItem: 0
 --- !u!1 &1697523426
 GameObject:
   m_ObjectHideFlags: 0
