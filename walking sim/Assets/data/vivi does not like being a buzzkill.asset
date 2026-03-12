@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e139c25bfe2d63340b750059efb367ba, type: 3}
   m_Name: vivi does not like being a buzzkill
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: 
+  displayName: Vivi
   placeHolderOpeningLine: 
-  lines: []
+  lines:
+  - Booooo!
+  - What are we waiting for? Let's investigate!
   choices: []
   nextNode: {fileID: 0}

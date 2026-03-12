@@ -27,20 +27,7 @@ public class descriptionManager : MonoBehaviour
         playerMovement.OnObjectDescripton -= DescribeObject;
     }
 
-    void DescribeObject(ObjectData data)
-    {
-        if (data == null)
-        {
-            Debug.Log("NPC DATA NULL");
-        }
-
-        if (descriptionPanel != null) descriptionPanel.SetActive(true);
-        if (objectName != null) objectName.text = data.objectName;
-        if (objectDescription != null) objectDescription.text = data.objectDescription;
-
-        Debug.Log($"Dialogue start with {data.objectName}: {data.objectDescription}");
-    }
-
+    
     private void Awake()
     {
 
@@ -62,7 +49,7 @@ public class descriptionManager : MonoBehaviour
         }
     }
 
-    void StartDialogue(ObjectData data)
+    public void DescribeObject(ObjectData data)
     {
         if (data == null)
         {
@@ -113,7 +100,7 @@ public class descriptionManager : MonoBehaviour
 
 
 
-    void ShowChoices(ObjectChoice[] choices)
+    public void ShowChoices(ObjectChoice[] choices)
     {
 
         ClearChoices();
@@ -128,7 +115,7 @@ public class descriptionManager : MonoBehaviour
         {
 
             Button button = Instantiate(objectButtonPrefab, inventoryCheck);
-            Debug.Log("instantiate button");
+            Debug.Log("button");
 
             TextMeshProUGUI tmp = button.GetComponentInChildren<TextMeshProUGUI>();
 
@@ -141,7 +128,7 @@ public class descriptionManager : MonoBehaviour
                 Choose(next);
             });
 
-            Debug.Log("choices are showing");
+            Debug.Log("choices ");
         }
     }
     void FinishNode()

@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: drawer
   m_EditorClassIdentifier: Assembly-CSharp::ObjectData
   objectName: DRAWER
-  objectDescription: a standard kitchen drawer
+  objectDescription: 
   lines:
-  - This is weird...
-  choices:
-  - choiceX: investigate
-    objectNode: {fileID: 0}
-  - choiceX: move on
-    objectNode: {fileID: 0}
+  - A standard kitchen drawer. It's dusty as hell.
+  - Where are the scissors?
+  choices: []
   objectNode: {fileID: 0}

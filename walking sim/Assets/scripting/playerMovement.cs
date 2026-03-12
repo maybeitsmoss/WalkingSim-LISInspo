@@ -179,13 +179,13 @@ public class playerMovement : MonoBehaviour
         if (isLocked)
         {
 
-            moveInput = Vector3.zero;
+            /*moveInput = Vector3.zero;
             lookInput = Vector3.zero;
             verticalVelocity = 0;
-
+            */
             Cursor.lockState = CursorLockMode.None;
+            Debug.Log("the mouse has been freed");
             Cursor.visible = true;
-            
         }
 
         else

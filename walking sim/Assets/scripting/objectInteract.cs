@@ -11,7 +11,6 @@ public class objectInteract : interActable
             Debug.Log("object has no data" + gameObject.name);
 
         }
-
         playermovement.ObjectDescription(data);
     }
 

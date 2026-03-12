@@ -125,11 +125,13 @@ public class dialogueManager : MonoBehaviour
             if (tmp != null) tmp.text = choice.choiceX;
 
             NPCData next = choice.nextNode;
+            Debug.Log(button.name);
             button.onClick.AddListener(() =>
             {
-
+                Debug.Log("This is working");
                 Choose(next);
-            } );
+            } 
+            );
 
             Debug.Log("choices are showing");
         }
@@ -156,8 +158,9 @@ public class dialogueManager : MonoBehaviour
         EndDialogue();
     }
 
-    void Choose(NPCData nextNode)
+    public void Choose(NPCData nextNode)
     {
+        Debug.Log("the buttons are buttoning");
         ClearChoices();
 
         if (nextNode == null)

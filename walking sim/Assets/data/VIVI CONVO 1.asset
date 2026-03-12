@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e139c25bfe2d63340b750059efb367ba, type: 3}
   m_Name: VIVI CONVO 1
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: 
+  displayName: Vivi
   placeHolderOpeningLine: 
-  lines: []
+  lines:
+  - 'Can''t belive we got into this place. '
+  - 'Or... I can believe it. My dad''s the realtor, after all! '
   choices: []
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 416f3b324f73957478f25e8733d639c1, type: 2}
